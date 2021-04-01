@@ -1,18 +1,23 @@
-import { StatusBar } from 'expo-status-bar';
+import Constants from 'expo-constants';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import AuthorRow from "./components/AuthorRow";
 
 export default function App() {
   return (
-    <Avatar initials="FL" size={35} backgroundColor={'blue'} />
+    <View style={styles.container}>
+      <AuthorRow linkText={'Comments'} fullName={'First Last'} onPressLinkText={() => console.log('Pressed Link!!')} />
+    </View>
   )
 }
 
 const styles = StyleSheet.create({
   container: {
+    marginTop: Constants.statusBarHeight,
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+    alignItems: 'stretch'
   },
 });
