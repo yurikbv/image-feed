@@ -1,12 +1,18 @@
 import Constants from 'expo-constants';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import AuthorRow from "./components/AuthorRow";
+import { StyleSheet, View } from 'react-native';
+import CardList from "./components/CardList";
 
 export default function App() {
+  
+  const items = [
+    { id: 0, author: 'Bob Ross' },
+    { id: 1, author: 'Chuck Norris' },
+  ];
+  
   return (
     <View style={styles.container}>
-      <AuthorRow linkText={'Comments'} fullName={'First Last'} onPressLinkText={() => console.log('Pressed Link!!')} />
+      <CardList items={items} />
     </View>
   )
 }
